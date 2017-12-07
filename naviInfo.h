@@ -1,3 +1,4 @@
+//the struct of the naviInfo
 
 #ifndef NaviInfo_
 #define NaviInfo_

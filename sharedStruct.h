@@ -1,3 +1,5 @@
+//the structure of the sharedInfo in the memory
+
 #ifndef SharedInfo_
 #define SharedInfo_
 #define NAME_SIZE 120

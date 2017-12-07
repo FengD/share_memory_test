@@ -7,6 +7,7 @@ LDLIBS = -lcanlib -lpthread
 STD11 = -std=c++11
 
 server: main.cpp \
+	 server.cpp \
 	 sharedStruct.h \
 	 naviInfo.h \
 	 server.h \
@@ -42,6 +43,7 @@ server: main.cpp \
 	 dbcpack_ert_rtw/CAN_65B.h
 		${CXX} -o server.out \
 			main.cpp \
+			server.cpp \
 			canMsgFuncUtil.cpp \
 			dbcpack_ert_rtw/dbcpack_data.cpp \
 			dbcpack_ert_rtw/CAN_330.cpp \
@@ -70,8 +72,8 @@ server: main.cpp \
 			dbcpack_ert_rtw/CAN_65A.cpp \
 			dbcpack_ert_rtw/CAN_65B.cpp ${STD11} ${LDLIBS}
 
-readShareMemory: readClient.cpp sharedStruct.h
-				${CXX} -o accepter.out readClient.cpp ${STD11} ${LDLIBS}
+readShareMemory: readClient.cpp readClientMain.cpp sharedStruct.h
+				${CXX} -o accepter.out readClient.cpp readClientMain.cpp ${STD11} ${LDLIBS}
 
 
 clean:

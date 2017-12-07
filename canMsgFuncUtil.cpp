@@ -1,3 +1,11 @@
+/**
+This file contains the methods of the functionalities below.
+1. Get the CAN messages.
+2. Call the correspondent method by the id of the CAN messages.
+3. Transform the CAN message to the data.
+4. Save the data in the share memory.
+**/
+
 #include "canMsgFuncUtil.h"
 
 using namespace std;
@@ -137,6 +145,9 @@ CAN_MESSAGE canMsgUpdateToCanpack(unsigned int dlc, unsigned char *msg, CAN_MESS
   cout << "ID: " << canMsg.ID << endl;
   return canMsg;
 }
+
+
+//All the canXXX_MsgTransform method is used to transform the CAN message to data and to save them in the share memory.
 
 void can330_MsgTransform(unsigned int dlc, unsigned char *msg, BlockIO_dbcpack dbcpack_B, long id, struct SharedInfo *shared){
   dbcpack_B.CANPack330 = canMsgUpdateToCanpack(dlc, msg, dbcpack_B.CANPack330, id, 8);
