@@ -216,6 +216,7 @@ void Server::canReadMsg2(){
         if (dlc2 > 8) {
           dlc2 = 8;
         }
+        canMsgSwitch(id2, dlc2, msg2, shared);
         break;
       case canERR_NOMSG:
         break;
