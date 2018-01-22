@@ -45,12 +45,31 @@ void updateInfo3(int *writeFlag, int *readFlag, double *target1, double source1,
     *readFlag = 1;
   }
 }
-
+//2017.12.27/////
+void updateInfo8(int *writeFlag, int *readFlag, double *target1, double source1, double *target2, double source2, double *target3, double source3, double *target4, double source4, double *target5, double source5, double *target6, double source6, double *target7, double source7, double *target8, double source8)
+{
+  if(*writeFlag == 1){
+    *writeFlag = 0;
+    *readFlag = 0;
+    *target1 = source1;
+    *target2 = source2;
+    *target3 = source3;
+    *target4 = source4;
+    *target5 = source5;
+    *target6 = source6;
+    *target7 = source7;
+    *target8 = source8;
+    *writeFlag = 1;
+    *readFlag = 1;
+  }
+}
 //the mehtod is used to call the aiming function by the msg id
 void canMsgSwitch(long id, unsigned int dlc, unsigned char *msg, struct SharedInfo *shared){
   BlockIO_dbcpack dbcpack_B;
 
   switch(id){
+    case 512:
+      can200_MsgTransform(dlc, msg, dbcpack_B, id, shared);//2017.12.25//
     case 816:
       can330_MsgTransform(dlc, msg, dbcpack_B, id, shared);
       break;
@@ -148,7 +167,36 @@ CAN_MESSAGE canMsgUpdateToCanpack(unsigned int dlc, unsigned char *msg, CAN_MESS
 
 
 //All the canXXX_MsgTransform method is used to transform the CAN message to data and to save them in the share memory.
-
+void can200_MsgTransform(unsigned int dlc, unsigned char *msg, BlockIO_dbcpack dbcpack_B, long id, struct SharedInfo *shared){
+  dbcpack_B.CANPack200 = canMsgUpdateToCanpack(dlc, msg, dbcpack_B.CANPack200, id, 8);
+  dbcpack_CAN_200(dbcpack_B.CANPack200, &dbcpack_B.CAN_200, (rtP_CAN_200_dbcpack *)&dbcpack_P.CAN_200);
+  updateInfo8(&shared->canWriteCan200Msg, &shared->canReadCan200Msg, &shared->l8_BrakePedal, dbcpack_B.CAN_200.BrakePedal,
+&shared->l8_Collsn_warning_ID, dbcpack_B.CAN_200.Collsn_warning_ID,
+&shared->l8_Collsn_warning_state, dbcpack_B.CAN_200.Collsn_warning_state,
+&shared->l8_Control_Type, dbcpack_B.CAN_200.ControlType,
+&shared->l8_DrivePedal, dbcpack_B.CAN_200.DrivePedal,
+&shared->l8_GearPRND, dbcpack_B.CAN_200.GearPRND,
+&shared->l8_TargetPathState, dbcpack_B.CAN_200.TargetPathState,
+&shared->l8_TurnLamp, dbcpack_B.CAN_200.TurnLamp);
+cout << "l8_BrakePedal: " << dbcpack_B.CAN_200.BrakePedal << endl;
+cout << "l8_Collsn_warning_ID: " << dbcpack_B.CAN_200.Collsn_warning_ID << endl;
+cout << "l8_Collsn_warning_state: " << dbcpack_B.CAN_200.Collsn_warning_state << endl;
+cout << "l8_Control_Type: " << dbcpack_B.CAN_200.ControlType << endl;
+cout << "l8_DrivePedal: " << dbcpack_B.CAN_200.DrivePedal << endl;
+cout << "l8_GearPRND: " << dbcpack_B.CAN_200.GearPRND << endl;
+cout << "l8_TurnLamp: " << dbcpack_B.CAN_200.TurnLamp << endl;
+cout << "l8_TargetPathState: " << dbcpack_B.CAN_200.TargetPathState << endl;
+/*cout << "msg.Data " << msg[0] << endl;
+cout << "msg.Data " << msg[1] << endl;
+cout << "msg.Data " << msg[2] << endl;
+cout << "msg.Data " << msg[3] << endl;
+cout << "msg.Data " << msg[4] << endl;
+cout << "msg.Data " << msg[5] << endl;
+cout << "msg.Data " << msg[6] << endl;
+cout << "msg.Data " << msg[7] << endl;
+*///cout << "msg.Data " << dbcpack_B.CAN_200.msg.Data[0] << endl;
+}
+//2017.12.27/////
 void can330_MsgTransform(unsigned int dlc, unsigned char *msg, BlockIO_dbcpack dbcpack_B, long id, struct SharedInfo *shared){
   dbcpack_B.CANPack330 = canMsgUpdateToCanpack(dlc, msg, dbcpack_B.CANPack330, id, 8);
   dbcpack_CAN_330(dbcpack_B.CANPack330, &dbcpack_B.CAN_330, (rtP_CAN_330_dbcpack *)&dbcpack_P.CAN_330);
@@ -267,6 +315,14 @@ void can600_MsgTransform(unsigned int dlc, unsigned char *msg, BlockIO_dbcpack d
   );
   cout << "SteerAngle: " << dbcpack_B.CAN_600.SteerAngle << endl;
   cout << "VehicleSpeed: " << dbcpack_B.CAN_600.VehicleSpeed << endl;
+printf("msg: %d\n", msg[0]);
+printf("msg: %d\n", msg[1]);
+printf("msg: %d\n", msg[2]);
+printf("msg: %d\n", msg[3]);
+printf("msg: %d\n", msg[4]);
+printf("msg: %d\n", msg[5]);
+printf("msg: %d\n", msg[6]);
+printf("msg: %d\n", msg[7]);
 }
 
 void can650_MsgTransform(unsigned int dlc, unsigned char *msg, BlockIO_dbcpack dbcpack_B, long id, struct SharedInfo *shared){

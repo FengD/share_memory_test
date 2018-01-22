@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -28,20 +28,20 @@
 
 /* Block signals for system '<Root>/CAN_362' */
 typedef struct {
-  real_T CANUnpack;                    /* '<S8>/CAN Unpack' */
-  real_T Y_Distance_3;                 /* '<S8>/Y_Distance_3' */
+  real_T CANUnpack;                    /* '<S11>/CAN Unpack' */
+  real_T Y_Distance_3;                 /* '<S11>/Y_Distance_3' */
 } rtB_CAN_362_dbcpack;
 
 /* Block states (auto storage) for system '<Root>/CAN_362' */
 typedef struct {
-  int_T CANUnpack_ModeSignalID;        /* '<S8>/CAN Unpack' */
-  int_T CANUnpack_StatusPortID;        /* '<S8>/CAN Unpack' */
+  int_T CANUnpack_ModeSignalID;        /* '<S11>/CAN Unpack' */
+  int_T CANUnpack_StatusPortID;        /* '<S11>/CAN Unpack' */
 } rtDW_CAN_362_dbcpack;
 
 /* Parameters for system: '<Root>/CAN_362' */
 struct rtP_CAN_362_dbcpack_ {
   real_T Y_Distance_3_Gain;            /* Expression: 1
-                                        * Referenced by: '<S8>/Y_Distance_3'
+                                        * Referenced by: '<S11>/Y_Distance_3'
                                         */
 };
 

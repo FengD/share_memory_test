@@ -88,6 +88,8 @@ void Server::canUnLink() {
 void Server::initFlags(struct SharedInfo *shared){
   shared->canWriteNaviInfo = 1;
   shared->canReadNaviInfo = 1;
+  shared->canWriteCan200Msg = 1;
+  shared->canReadCan200Msg = 1;
   shared->canWriteCan330Msg = 1;
   shared->canReadCan330Msg = 1;
   shared->canWriteCan332Msg = 1;
@@ -155,7 +157,7 @@ Server::Server(int port = SERVER_PORT):port(port), server_sock_fd(-1), client_so
   }
 
   //创建共享内存
-  shmid = shmget((key_t)6667, sizeof(struct SharedInfo), 0666|IPC_CREAT);
+  shmid = shmget((key_t)6669, sizeof(struct SharedInfo), 0666|IPC_CREAT);
   if(shmid == -1)
   {
       throw("shmget failed");

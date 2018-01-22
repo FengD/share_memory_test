@@ -147,6 +147,16 @@ struct SharedInfo{
 	int canReadCan65BMsg;
 	double l3_Curvature_Driv;
 	double l3_Mark_Color;
-
+//2017.12.27///
+	int canWriteCan200Msg;
+	int canReadCan200Msg;
+	double l8_BrakePedal;
+	double l8_Collsn_warning_ID;
+	double l8_Collsn_warning_state;
+	double l8_Control_Type;
+	double l8_DrivePedal;
+	double l8_GearPRND;
+	double l8_TargetPathState;
+	double l8_TurnLamp;
 };
 #endif

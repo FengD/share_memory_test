@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -23,16 +23,16 @@
 /* Start for atomic system: '<Root>/CAN_659' */
 void dbcpack_CAN_659_Start(void)
 {
-  /*-----------S-Function Block: <S23>/CAN Unpack -----------------*/
+  /*-----------S-Function Block: <S26>/CAN Unpack -----------------*/
 }
 
 /* Output and update for atomic system: '<Root>/CAN_659' */
 void dbcpack_CAN_659(CAN_MESSAGE rtu_In1, rtB_CAN_659_dbcpack *localB,
                      rtP_CAN_659_dbcpack *localP)
 {
-  /* S-Function (scanunpack): '<S23>/CAN Unpack' */
+  /* S-Function (scanunpack): '<S26>/CAN Unpack' */
   {
-    /* S-Function (scanunpack): '<S23>/CAN Unpack' */
+    /* S-Function (scanunpack): '<S26>/CAN Unpack' */
     if ((6 == rtu_In1.Length) && (rtu_In1.ID != INVALID_CAN_ID) ) {
       if ((1625U == rtu_In1.ID) && (0U == rtu_In1.Extended) ) {
         {
@@ -221,13 +221,13 @@ void dbcpack_CAN_659(CAN_MESSAGE rtu_In1, rtB_CAN_659_dbcpack *localB,
     }
   }
 
-  /* Gain: '<S23>/L3_Location' */
+  /* Gain: '<S26>/L3_Location' */
   localB->L3_Location = localP->L3_Location_Gain * localB->CANUnpack_o1;
 
-  /* Gain: '<S23>/L3_MarkType' */
+  /* Gain: '<S26>/L3_MarkType' */
   localB->L3_MarkType = localP->L3_MarkType_Gain * localB->CANUnpack_o3;
 
-  /* Gain: '<S23>/L3_Quality' */
+  /* Gain: '<S26>/L3_Quality' */
   localB->L3_Quality = localP->L3_Quality_Gain * localB->CANUnpack_o2;
 }
 

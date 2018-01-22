@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -23,16 +23,16 @@
 /* Start for atomic system: '<Root>/CAN_380' */
 void dbcpack_CAN_380_Start(void)
 {
-  /*-----------S-Function Block: <S11>/CAN Unpack -----------------*/
+  /*-----------S-Function Block: <S14>/CAN Unpack -----------------*/
 }
 
 /* Output and update for atomic system: '<Root>/CAN_380' */
 void dbcpack_CAN_380(CAN_MESSAGE rtu_In1, rtB_CAN_380_dbcpack *localB,
                      rtP_CAN_380_dbcpack *localP)
 {
-  /* S-Function (scanunpack): '<S11>/CAN Unpack' */
+  /* S-Function (scanunpack): '<S14>/CAN Unpack' */
   {
-    /* S-Function (scanunpack): '<S11>/CAN Unpack' */
+    /* S-Function (scanunpack): '<S14>/CAN Unpack' */
     if ((8 == rtu_In1.Length) && (rtu_In1.ID != INVALID_CAN_ID) ) {
       if ((896U == rtu_In1.ID) && (0U == rtu_In1.Extended) ) {
         {
@@ -292,14 +292,14 @@ void dbcpack_CAN_380(CAN_MESSAGE rtu_In1, rtB_CAN_380_dbcpack *localB,
     }
   }
 
-  /* Gain: '<S11>/Objects_ID_5' */
+  /* Gain: '<S14>/Objects_ID_5' */
   localB->Objects_ID_5 = localP->Objects_ID_5_Gain * localB->CANUnpack_o1;
 
-  /* Gain: '<S11>/Objects_Object_Class_5' */
+  /* Gain: '<S14>/Objects_Object_Class_5' */
   localB->Objects_Object_Class_5 = localP->Objects_Object_Class_5_Gain *
     localB->CANUnpack_o3;
 
-  /* Gain: '<S11>/X_Distance_5' */
+  /* Gain: '<S14>/X_Distance_5' */
   localB->X_Distance_5 = localP->X_Distance_5_Gain * localB->CANUnpack_o2;
 }
 

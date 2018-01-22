@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -27,6 +27,9 @@
 #include "dbcpack_types.h"
 
 /* Child system includes */
+#include "CAN_140.h"
+#include "CAN_180.h"
+#include "CAN_200.h"
 #include "CAN_330.h"
 #include "CAN_332.h"
 #include "CAN_340.h"
@@ -67,6 +70,9 @@
 
 /* Block signals (auto storage) */
 typedef struct {
+  CAN_DATATYPE CANPack140;             /* '<Root>/CAN Pack140' */
+  CAN_DATATYPE CANPack180;             /* '<Root>/CAN Pack180' */
+  CAN_DATATYPE CANPack200;             /* '<Root>/CAN Pack200' */
   CAN_DATATYPE CANPack330;             /* '<Root>/CAN Pack330' */
   CAN_DATATYPE CANPack332;             /* '<Root>/CAN Pack332' */
   CAN_DATATYPE CANPack340;             /* '<Root>/CAN Pack340' */
@@ -117,6 +123,9 @@ typedef struct {
   rtB_CAN_340_dbcpack CAN_340;         /* '<Root>/CAN_340' */
   rtB_CAN_332_dbcpack CAN_332;         /* '<Root>/CAN_332' */
   rtB_CAN_330_dbcpack CAN_330;         /* '<Root>/CAN_330' */
+  rtB_CAN_200_dbcpack CAN_200;         /* '<Root>/CAN_200' */
+  rtB_CAN_180_dbcpack CAN_180;         /* '<Root>/CAN_180' */
+  rtB_CAN_140_dbcpack CAN_140;         /* '<Root>/CAN_140' */
 } BlockIO_dbcpack;
 
 /* Block states (auto storage) for system '<Root>' */
@@ -146,10 +155,22 @@ typedef struct {
   rtDW_CAN_340_dbcpack CAN_340;        /* '<Root>/CAN_340' */
   rtDW_CAN_332_dbcpack CAN_332;        /* '<Root>/CAN_332' */
   rtDW_CAN_330_dbcpack CAN_330;        /* '<Root>/CAN_330' */
+  rtDW_CAN_200_dbcpack CAN_200;        /* '<Root>/CAN_200' */
+  rtDW_CAN_180_dbcpack CAN_180;        /* '<Root>/CAN_180' */
+  rtDW_CAN_140_dbcpack CAN_140;        /* '<Root>/CAN_140' */
 } D_Work_dbcpack;
 
 /* Parameters (auto storage) */
 struct Parameters_dbcpack_ {
+  uint8_T Constant25_Value;            /* Computed Parameter: Constant25_Value
+                                        * Referenced by: '<Root>/Constant25'
+                                        */
+  uint8_T Constant26_Value;            /* Computed Parameter: Constant26_Value
+                                        * Referenced by: '<Root>/Constant26'
+                                        */
+  uint8_T Constant27_Value;            /* Computed Parameter: Constant27_Value
+                                        * Referenced by: '<Root>/Constant27'
+                                        */
   uint8_T Constant13_Value;            /* Computed Parameter: Constant13_Value
                                         * Referenced by: '<Root>/Constant13'
                                         */
@@ -250,6 +271,9 @@ struct Parameters_dbcpack_ {
   rtP_CAN_340_dbcpack CAN_340;         /* '<Root>/CAN_340' */
   rtP_CAN_332_dbcpack CAN_332;         /* '<Root>/CAN_332' */
   rtP_CAN_330_dbcpack CAN_330;         /* '<Root>/CAN_330' */
+  rtP_CAN_200_dbcpack CAN_200;         /* '<Root>/CAN_200' */
+  rtP_CAN_180_dbcpack CAN_180;         /* '<Root>/CAN_180' */
+  rtP_CAN_140_dbcpack CAN_140;         /* '<Root>/CAN_140' */
 };
 
 /* Real-time Model Data Structure */
@@ -322,31 +346,34 @@ extern "C" {
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'dbcpack'
- * '<S1>'   : 'dbcpack/CAN_330'
- * '<S2>'   : 'dbcpack/CAN_332'
- * '<S3>'   : 'dbcpack/CAN_340'
- * '<S4>'   : 'dbcpack/CAN_342'
- * '<S5>'   : 'dbcpack/CAN_350'
- * '<S6>'   : 'dbcpack/CAN_352'
- * '<S7>'   : 'dbcpack/CAN_360'
- * '<S8>'   : 'dbcpack/CAN_362'
- * '<S9>'   : 'dbcpack/CAN_370'
- * '<S10>'  : 'dbcpack/CAN_372'
- * '<S11>'  : 'dbcpack/CAN_380'
- * '<S12>'  : 'dbcpack/CAN_382'
- * '<S13>'  : 'dbcpack/CAN_600'
- * '<S14>'  : 'dbcpack/CAN_650'
- * '<S15>'  : 'dbcpack/CAN_651'
- * '<S16>'  : 'dbcpack/CAN_652'
- * '<S17>'  : 'dbcpack/CAN_653'
- * '<S18>'  : 'dbcpack/CAN_654'
- * '<S19>'  : 'dbcpack/CAN_655'
- * '<S20>'  : 'dbcpack/CAN_656'
- * '<S21>'  : 'dbcpack/CAN_657'
- * '<S22>'  : 'dbcpack/CAN_658'
- * '<S23>'  : 'dbcpack/CAN_659'
- * '<S24>'  : 'dbcpack/CAN_65A'
- * '<S25>'  : 'dbcpack/CAN_65B'
+ * '<S1>'   : 'dbcpack/CAN_140'
+ * '<S2>'   : 'dbcpack/CAN_180'
+ * '<S3>'   : 'dbcpack/CAN_200'
+ * '<S4>'   : 'dbcpack/CAN_330'
+ * '<S5>'   : 'dbcpack/CAN_332'
+ * '<S6>'   : 'dbcpack/CAN_340'
+ * '<S7>'   : 'dbcpack/CAN_342'
+ * '<S8>'   : 'dbcpack/CAN_350'
+ * '<S9>'   : 'dbcpack/CAN_352'
+ * '<S10>'  : 'dbcpack/CAN_360'
+ * '<S11>'  : 'dbcpack/CAN_362'
+ * '<S12>'  : 'dbcpack/CAN_370'
+ * '<S13>'  : 'dbcpack/CAN_372'
+ * '<S14>'  : 'dbcpack/CAN_380'
+ * '<S15>'  : 'dbcpack/CAN_382'
+ * '<S16>'  : 'dbcpack/CAN_600'
+ * '<S17>'  : 'dbcpack/CAN_650'
+ * '<S18>'  : 'dbcpack/CAN_651'
+ * '<S19>'  : 'dbcpack/CAN_652'
+ * '<S20>'  : 'dbcpack/CAN_653'
+ * '<S21>'  : 'dbcpack/CAN_654'
+ * '<S22>'  : 'dbcpack/CAN_655'
+ * '<S23>'  : 'dbcpack/CAN_656'
+ * '<S24>'  : 'dbcpack/CAN_657'
+ * '<S25>'  : 'dbcpack/CAN_658'
+ * '<S26>'  : 'dbcpack/CAN_659'
+ * '<S27>'  : 'dbcpack/CAN_65A'
+ * '<S28>'  : 'dbcpack/CAN_65B'
  */
 #endif                                 /* RTW_HEADER_dbcpack_h_ */
 

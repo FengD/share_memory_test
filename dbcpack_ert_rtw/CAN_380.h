@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -28,30 +28,30 @@
 
 /* Block signals for system '<Root>/CAN_380' */
 typedef struct {
-  real_T CANUnpack_o1;                 /* '<S11>/CAN Unpack' */
-  real_T CANUnpack_o2;                 /* '<S11>/CAN Unpack' */
-  real_T CANUnpack_o3;                 /* '<S11>/CAN Unpack' */
-  real_T Objects_ID_5;                 /* '<S11>/Objects_ID_5' */
-  real_T Objects_Object_Class_5;       /* '<S11>/Objects_Object_Class_5' */
-  real_T X_Distance_5;                 /* '<S11>/X_Distance_5' */
+  real_T CANUnpack_o1;                 /* '<S14>/CAN Unpack' */
+  real_T CANUnpack_o2;                 /* '<S14>/CAN Unpack' */
+  real_T CANUnpack_o3;                 /* '<S14>/CAN Unpack' */
+  real_T Objects_ID_5;                 /* '<S14>/Objects_ID_5' */
+  real_T Objects_Object_Class_5;       /* '<S14>/Objects_Object_Class_5' */
+  real_T X_Distance_5;                 /* '<S14>/X_Distance_5' */
 } rtB_CAN_380_dbcpack;
 
 /* Block states (auto storage) for system '<Root>/CAN_380' */
 typedef struct {
-  int_T CANUnpack_ModeSignalID;        /* '<S11>/CAN Unpack' */
-  int_T CANUnpack_StatusPortID;        /* '<S11>/CAN Unpack' */
+  int_T CANUnpack_ModeSignalID;        /* '<S14>/CAN Unpack' */
+  int_T CANUnpack_StatusPortID;        /* '<S14>/CAN Unpack' */
 } rtDW_CAN_380_dbcpack;
 
 /* Parameters for system: '<Root>/CAN_380' */
 struct rtP_CAN_380_dbcpack_ {
   real_T Objects_ID_5_Gain;            /* Expression: 1
-                                        * Referenced by: '<S11>/Objects_ID_5'
+                                        * Referenced by: '<S14>/Objects_ID_5'
                                         */
   real_T Objects_Object_Class_5_Gain;  /* Expression: 1
-                                        * Referenced by: '<S11>/Objects_Object_Class_5'
+                                        * Referenced by: '<S14>/Objects_Object_Class_5'
                                         */
   real_T X_Distance_5_Gain;            /* Expression: 1
-                                        * Referenced by: '<S11>/X_Distance_5'
+                                        * Referenced by: '<S14>/X_Distance_5'
                                         */
 };
 

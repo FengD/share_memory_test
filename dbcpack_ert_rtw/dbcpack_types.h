@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -17,6 +17,15 @@
 #ifndef RTW_HEADER_dbcpack_types_h_
 #define RTW_HEADER_dbcpack_types_h_
 #include "rtwtypes.h"
+
+/* Parameters for system: '<Root>/CAN_140' */
+typedef struct rtP_CAN_140_dbcpack_ rtP_CAN_140_dbcpack;
+
+/* Parameters for system: '<Root>/CAN_180' */
+typedef struct rtP_CAN_180_dbcpack_ rtP_CAN_180_dbcpack;
+
+/* Parameters for system: '<Root>/CAN_200' */
+typedef struct rtP_CAN_200_dbcpack_ rtP_CAN_200_dbcpack;
 
 /* Parameters for system: '<Root>/CAN_330' */
 typedef struct rtP_CAN_330_dbcpack_ rtP_CAN_330_dbcpack;

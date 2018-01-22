@@ -26,7 +26,7 @@ class ReadSharedMemory{
     ReadSharedMemory(){
         shm = NULL;
         //创建共享内存
-        shmid = shmget((key_t)6667, sizeof(struct SharedInfo), 0666|IPC_CREAT);
+        shmid = shmget((key_t)6668, sizeof(struct SharedInfo), 0666|IPC_CREAT);
         if(shmid == -1)
         {
             throw("shmget failed");
@@ -898,5 +898,101 @@ class ReadSharedMemory{
         // return getL3_Mark_Color();
         return shared->l3_Mark_Color;
       }
+ double getL8_BrakePedal(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_BrakePedal;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_BrakePedal;
+      }
     }
+    double getL8_Collsn_warning_ID(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_Collsn_warning_ID;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_Collsn_warning_ID;
+      }
+    }
+    double getL8_Collsn_warning_state(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_Collsn_warning_state;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_Collsn_warning_state;
+      }
+    }
+    double getL8_Control_Type(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_Control_Type;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_Control_Type;
+      }
+    }
+    double getL8_DrivePedal(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_DrivePedal;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_DrivePedal;
+      }
+    }
+    double getL8_GearPRND(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_GearPRND;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_GearPRND;
+      }
+    }
+    double getL8_TargetPathState(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_TargetPathState;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_TargetPathState;
+      }
+    }
+    double getL8_TurnLamp(){
+      if(shared->canReadCan200Msg == 1){
+        double v;
+        shared->canWriteCan200Msg = 0;
+        v = shared->l8_TurnLamp;
+        shared->canWriteCan200Msg = 1;
+        return v;
+      } else {
+        // return getL3_Mark_Color();
+        return shared->l8_TurnLamp;
+      }
+    }
+  }
 };

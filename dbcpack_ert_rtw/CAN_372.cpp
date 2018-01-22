@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -23,16 +23,16 @@
 /* Start for atomic system: '<Root>/CAN_372' */
 void dbcpack_CAN_372_Start(void)
 {
-  /*-----------S-Function Block: <S10>/CAN Unpack -----------------*/
+  /*-----------S-Function Block: <S13>/CAN Unpack -----------------*/
 }
 
 /* Output and update for atomic system: '<Root>/CAN_372' */
 void dbcpack_CAN_372(CAN_MESSAGE rtu_In1, rtB_CAN_372_dbcpack *localB,
                      rtP_CAN_372_dbcpack *localP)
 {
-  /* S-Function (scanunpack): '<S10>/CAN Unpack' */
+  /* S-Function (scanunpack): '<S13>/CAN Unpack' */
   {
-    /* S-Function (scanunpack): '<S10>/CAN Unpack' */
+    /* S-Function (scanunpack): '<S13>/CAN Unpack' */
     if ((8 == rtu_In1.Length) && (rtu_In1.ID != INVALID_CAN_ID) ) {
       if ((882U == rtu_In1.ID) && (0U == rtu_In1.Extended) ) {
         {
@@ -148,7 +148,7 @@ void dbcpack_CAN_372(CAN_MESSAGE rtu_In1, rtB_CAN_372_dbcpack *localB,
     }
   }
 
-  /* Gain: '<S10>/Y_Distance_4' */
+  /* Gain: '<S13>/Y_Distance_4' */
   localB->Y_Distance_4 = localP->Y_Distance_4_Gain * localB->CANUnpack;
 }
 

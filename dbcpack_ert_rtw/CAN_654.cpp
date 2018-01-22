@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -23,16 +23,16 @@
 /* Start for atomic system: '<Root>/CAN_654' */
 void dbcpack_CAN_654_Start(void)
 {
-  /*-----------S-Function Block: <S18>/CAN Unpack -----------------*/
+  /*-----------S-Function Block: <S21>/CAN Unpack -----------------*/
 }
 
 /* Output and update for atomic system: '<Root>/CAN_654' */
 void dbcpack_CAN_654(CAN_MESSAGE rtu_In1, rtB_CAN_654_dbcpack *localB,
                      rtP_CAN_654_dbcpack *localP)
 {
-  /* S-Function (scanunpack): '<S18>/CAN Unpack' */
+  /* S-Function (scanunpack): '<S21>/CAN Unpack' */
   {
-    /* S-Function (scanunpack): '<S18>/CAN Unpack' */
+    /* S-Function (scanunpack): '<S21>/CAN Unpack' */
     if ((6 == rtu_In1.Length) && (rtu_In1.ID != INVALID_CAN_ID) ) {
       if ((1620U == rtu_In1.ID) && (0U == rtu_In1.Extended) ) {
         {
@@ -374,14 +374,14 @@ void dbcpack_CAN_654(CAN_MESSAGE rtu_In1, rtB_CAN_654_dbcpack *localB,
     }
   }
 
-  /* Gain: '<S18>/L1_Curvature' */
+  /* Gain: '<S21>/L1_Curvature' */
   localB->L1_Curvature = localP->L1_Curvature_Gain * localB->CANUnpack_o3;
 
-  /* Gain: '<S18>/L1_Heading_Angle' */
+  /* Gain: '<S21>/L1_Heading_Angle' */
   localB->L1_Heading_Angle = localP->L1_Heading_Angle_Gain *
     localB->CANUnpack_o2;
 
-  /* Gain: '<S18>/L1_Position' */
+  /* Gain: '<S21>/L1_Position' */
   localB->L1_Position = localP->L1_Position_Gain * localB->CANUnpack_o1;
 }
 

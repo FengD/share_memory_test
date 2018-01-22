@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -30,6 +30,87 @@ RT_MODEL_dbcpack *const dbcpack_M = &dbcpack_M_;
 /* Model step function */
 void dbcpack_step(void)
 {
+  /* S-Function (scanpack): '<Root>/CAN Pack140' */
+  dbcpack_B.CANPack140.ID = 320U;
+  dbcpack_B.CANPack140.Length = 8U;
+  dbcpack_B.CANPack140.Extended = 0U;
+  dbcpack_B.CANPack140.Remote = !(1);
+  dbcpack_B.CANPack140.Data[0] = 0;
+  dbcpack_B.CANPack140.Data[1] = 0;
+  dbcpack_B.CANPack140.Data[2] = 0;
+  dbcpack_B.CANPack140.Data[3] = 0;
+  dbcpack_B.CANPack140.Data[4] = 0;
+  dbcpack_B.CANPack140.Data[5] = 0;
+  dbcpack_B.CANPack140.Data[6] = 0;
+  dbcpack_B.CANPack140.Data[7] = 0;
+
+  {
+    {
+      (void) memcpy((dbcpack_B.CANPack140.Data), &dbcpack_P.Constant25_Value,
+                    1 * sizeof(uint8_T));
+    }
+  }
+
+  /* Outputs for Atomic SubSystem: '<Root>/CAN_140' */
+  dbcpack_CAN_140(dbcpack_B.CANPack140, &dbcpack_B.CAN_140, (rtP_CAN_140_dbcpack
+    *)&dbcpack_P.CAN_140);
+
+  /* End of Outputs for SubSystem: '<Root>/CAN_140' */
+
+  /* S-Function (scanpack): '<Root>/CAN Pack180' */
+  dbcpack_B.CANPack180.ID = 384U;
+  dbcpack_B.CANPack180.Length = 8U;
+  dbcpack_B.CANPack180.Extended = 0U;
+  dbcpack_B.CANPack180.Remote = !(1);
+  dbcpack_B.CANPack180.Data[0] = 0;
+  dbcpack_B.CANPack180.Data[1] = 0;
+  dbcpack_B.CANPack180.Data[2] = 0;
+  dbcpack_B.CANPack180.Data[3] = 0;
+  dbcpack_B.CANPack180.Data[4] = 0;
+  dbcpack_B.CANPack180.Data[5] = 0;
+  dbcpack_B.CANPack180.Data[6] = 0;
+  dbcpack_B.CANPack180.Data[7] = 0;
+
+  {
+    {
+      (void) memcpy((dbcpack_B.CANPack180.Data), &dbcpack_P.Constant26_Value,
+                    1 * sizeof(uint8_T));
+    }
+  }
+
+  /* Outputs for Atomic SubSystem: '<Root>/CAN_180' */
+  dbcpack_CAN_180(dbcpack_B.CANPack180, &dbcpack_B.CAN_180, (rtP_CAN_180_dbcpack
+    *)&dbcpack_P.CAN_180);
+
+  /* End of Outputs for SubSystem: '<Root>/CAN_180' */
+
+  /* S-Function (scanpack): '<Root>/CAN Pack200' */
+  dbcpack_B.CANPack200.ID = 512U;
+  dbcpack_B.CANPack200.Length = 8U;
+  dbcpack_B.CANPack200.Extended = 0U;
+  dbcpack_B.CANPack200.Remote = !(1);
+  dbcpack_B.CANPack200.Data[0] = 0;
+  dbcpack_B.CANPack200.Data[1] = 0;
+  dbcpack_B.CANPack200.Data[2] = 0;
+  dbcpack_B.CANPack200.Data[3] = 0;
+  dbcpack_B.CANPack200.Data[4] = 0;
+  dbcpack_B.CANPack200.Data[5] = 0;
+  dbcpack_B.CANPack200.Data[6] = 0;
+  dbcpack_B.CANPack200.Data[7] = 0;
+
+  {
+    {
+      (void) memcpy((dbcpack_B.CANPack200.Data), &dbcpack_P.Constant27_Value,
+                    1 * sizeof(uint8_T));
+    }
+  }
+
+  /* Outputs for Atomic SubSystem: '<Root>/CAN_200' */
+  dbcpack_CAN_200(dbcpack_B.CANPack200, &dbcpack_B.CAN_200, (rtP_CAN_200_dbcpack
+    *)&dbcpack_P.CAN_200);
+
+  /* End of Outputs for SubSystem: '<Root>/CAN_200' */
+
   /* S-Function (scanpack): '<Root>/CAN Pack330' */
   dbcpack_B.CANPack330.ID = 816U;
   dbcpack_B.CANPack330.Length = 8U;
@@ -719,6 +800,9 @@ void dbcpack_initialize(void)
                 sizeof(BlockIO_dbcpack));
 
   {
+    dbcpack_B.CANPack140 = CAN_DATATYPE_GROUND;
+    dbcpack_B.CANPack180 = CAN_DATATYPE_GROUND;
+    dbcpack_B.CANPack200 = CAN_DATATYPE_GROUND;
     dbcpack_B.CANPack330 = CAN_DATATYPE_GROUND;
     dbcpack_B.CANPack332 = CAN_DATATYPE_GROUND;
     dbcpack_B.CANPack340 = CAN_DATATYPE_GROUND;
@@ -749,6 +833,21 @@ void dbcpack_initialize(void)
   /* states (dwork) */
   (void) memset((void *)&dbcpack_DWork, 0,
                 sizeof(D_Work_dbcpack));
+
+  /* Start for Atomic SubSystem: '<Root>/CAN_140' */
+  dbcpack_CAN_140_Start();
+
+  /* End of Start for SubSystem: '<Root>/CAN_140' */
+
+  /* Start for Atomic SubSystem: '<Root>/CAN_180' */
+  dbcpack_CAN_180_Start();
+
+  /* End of Start for SubSystem: '<Root>/CAN_180' */
+
+  /* Start for Atomic SubSystem: '<Root>/CAN_200' */
+  dbcpack_CAN_200_Start();
+
+  /* End of Start for SubSystem: '<Root>/CAN_200' */
 
   /* Start for Atomic SubSystem: '<Root>/CAN_330' */
   dbcpack_CAN_330_Start();

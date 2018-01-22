@@ -16,6 +16,7 @@ server: main.cpp \
 	 dbcpack_ert_rtw/rtwtypes.h \
 	 dbcpack_ert_rtw/can_message.h \
 	 dbcpack_ert_rtw/dbcpack_types.h \
+	 dbcpack_ert_rtw/CAN_200.h \
 	 dbcpack_ert_rtw/CAN_330.h \
 	 dbcpack_ert_rtw/CAN_332.h \
 	 dbcpack_ert_rtw/CAN_340.h \
@@ -46,6 +47,7 @@ server: main.cpp \
 			server.cpp \
 			canMsgFuncUtil.cpp \
 			dbcpack_ert_rtw/dbcpack_data.cpp \
+			dbcpack_ert_rtw/CAN_200.cpp \
 			dbcpack_ert_rtw/CAN_330.cpp \
 			dbcpack_ert_rtw/CAN_332.cpp \
 			dbcpack_ert_rtw/CAN_340.cpp \

@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -23,16 +23,16 @@
 /* Start for atomic system: '<Root>/CAN_652' */
 void dbcpack_CAN_652_Start(void)
 {
-  /*-----------S-Function Block: <S16>/CAN Unpack -----------------*/
+  /*-----------S-Function Block: <S19>/CAN Unpack -----------------*/
 }
 
 /* Output and update for atomic system: '<Root>/CAN_652' */
 void dbcpack_CAN_652(CAN_MESSAGE rtu_In1, rtB_CAN_652_dbcpack *localB,
                      rtP_CAN_652_dbcpack *localP)
 {
-  /* S-Function (scanunpack): '<S16>/CAN Unpack' */
+  /* S-Function (scanunpack): '<S19>/CAN Unpack' */
   {
-    /* S-Function (scanunpack): '<S16>/CAN Unpack' */
+    /* S-Function (scanunpack): '<S19>/CAN Unpack' */
     if ((5 == rtu_In1.Length) && (rtu_In1.ID != INVALID_CAN_ID) ) {
       if ((1618U == rtu_In1.ID) && (0U == rtu_In1.Extended) ) {
         {
@@ -225,11 +225,11 @@ void dbcpack_CAN_652(CAN_MESSAGE rtu_In1, rtB_CAN_652_dbcpack *localB,
     }
   }
 
-  /* Gain: '<S16>/L0_Curvature_Driv' */
+  /* Gain: '<S19>/L0_Curvature_Driv' */
   localB->L0_Curvature_Driv = localP->L0_Curvature_Driv_Gain *
     localB->CANUnpack_o1;
 
-  /* Gain: '<S16>/L0_Mark_Color' */
+  /* Gain: '<S19>/L0_Mark_Color' */
   localB->L0_Mark_Color = localP->L0_Mark_Color_Gain * localB->CANUnpack_o2;
 }
 

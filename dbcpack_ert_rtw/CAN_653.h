@@ -3,10 +3,10 @@
  *
  * Code generated for Simulink model 'dbcpack'.
  *
- * Model version                  : 1.89
+ * Model version                  : 1.94
  * Simulink Coder version         : 8.3 (R2012b) 20-Jul-2012
  * TLC version                    : 8.3 (Jul 21 2012)
- * C/C++ source code generated on : Wed Jul 26 17:12:52 2017
+ * C/C++ source code generated on : Thu Jan 11 14:35:07 2018
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Generic->Custom
@@ -28,30 +28,30 @@
 
 /* Block signals for system '<Root>/CAN_653' */
 typedef struct {
-  real_T CANUnpack_o1;                 /* '<S17>/CAN Unpack' */
-  real_T CANUnpack_o2;                 /* '<S17>/CAN Unpack' */
-  real_T CANUnpack_o3;                 /* '<S17>/CAN Unpack' */
-  real_T L1_Location;                  /* '<S17>/L1_Location' */
-  real_T L1_MarkType;                  /* '<S17>/L1_MarkType' */
-  real_T L1_Quality;                   /* '<S17>/L1_Quality' */
+  real_T CANUnpack_o1;                 /* '<S20>/CAN Unpack' */
+  real_T CANUnpack_o2;                 /* '<S20>/CAN Unpack' */
+  real_T CANUnpack_o3;                 /* '<S20>/CAN Unpack' */
+  real_T L1_Location;                  /* '<S20>/L1_Location' */
+  real_T L1_MarkType;                  /* '<S20>/L1_MarkType' */
+  real_T L1_Quality;                   /* '<S20>/L1_Quality' */
 } rtB_CAN_653_dbcpack;
 
 /* Block states (auto storage) for system '<Root>/CAN_653' */
 typedef struct {
-  int_T CANUnpack_ModeSignalID;        /* '<S17>/CAN Unpack' */
-  int_T CANUnpack_StatusPortID;        /* '<S17>/CAN Unpack' */
+  int_T CANUnpack_ModeSignalID;        /* '<S20>/CAN Unpack' */
+  int_T CANUnpack_StatusPortID;        /* '<S20>/CAN Unpack' */
 } rtDW_CAN_653_dbcpack;
 
 /* Parameters for system: '<Root>/CAN_653' */
 struct rtP_CAN_653_dbcpack_ {
   real_T L1_Location_Gain;             /* Expression: 1
-                                        * Referenced by: '<S17>/L1_Location'
+                                        * Referenced by: '<S20>/L1_Location'
                                         */
   real_T L1_MarkType_Gain;             /* Expression: 1
-                                        * Referenced by: '<S17>/L1_MarkType'
+                                        * Referenced by: '<S20>/L1_MarkType'
                                         */
   real_T L1_Quality_Gain;              /* Expression: 1
-                                        * Referenced by: '<S17>/L1_Quality'
+                                        * Referenced by: '<S20>/L1_Quality'
                                         */
 };
 
